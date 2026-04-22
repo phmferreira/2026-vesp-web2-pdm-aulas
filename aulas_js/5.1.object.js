@@ -51,7 +51,7 @@ function criarAluno(nome, sobrenome, matricula) {
     };
 }
 
-console.log(criarAluno('Maria', 'teste a', 'Santos', 123));
+console.log(criarAluno('Maria', 'Santos', 123));
 
 
 
