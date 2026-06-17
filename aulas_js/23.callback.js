@@ -13,7 +13,7 @@ function instrucaoLatencia(msg, tempoLatencia) {
 // console.log('Isso executa primeiro!!!');
 
 function executar(funcaoCallback) {
-    funcao();
+    funcaoCallback();
 }
 
 function instrucaoLatCallback(
@@ -46,10 +46,36 @@ function conexao(chaveAcesso, callback) {
     if(callback) callback()
 }
 
-autenticar((chave) => {
-    conexao(chave,
-        () => {
-            console.log('Fim da conexão!');
+// autenticar((chave) => {
+//     conexao(chave,
+//         () => {
+//             console.log('Fim da conexão!');
+//         }
+//     )
+// })
+
+function instrucaoLatPromise(msg, tempo) {
+    return new Promise(
+        (resolve, reject) => {
+            setTimeout(() => {
+                resolve(msg)
+            }, tempo);
         }
+    );
+}
+
+instrucaoLatPromise('Abrir arquivo', 1500)
+    .then(resposta => {
+        console.log(resposta);
+        return instrucaoLatPromise('Leitura arquivo', 500);
+    })
+    .then(resposta => {
+        console.log(resposta);
+        return instrucaoLatPromise('Escrita no arquivo', 1000);
+    })
+    .then(resposta => {
+        console.log(resposta);
+    })
+    .then(
+        () => console.log('Isso vai por último')
     )
-})
