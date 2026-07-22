@@ -10,23 +10,23 @@ function instrucaoLatPromise(msg, tempo) {
     );
 }
 
-// instrucaoLatPromise('Abrir arquivo', 1500)
-//     .then(resposta => {
-//         console.log(resposta);
-//         return instrucaoLatPromise(2, 500);
-//     })
-//     .then(resposta => {
-//         console.log(resposta);
-//         return instrucaoLatPromise('Escrita no arquivo', 1000);
-//     })
-//     .then(resposta => {
-//         console.log(resposta);
-//     })
-//     .then(
-//         () => console.log('Isso vai por último'))
-//     .catch(
-//         (erro) => console.log(erro.message)
-// );
+instrucaoLatPromise('Abrir arquivo', 1500)
+    .then(resposta => {
+        console.log(resposta);
+        return instrucaoLatPromise(2, 500);
+    })
+    .then(resposta => {
+        console.log(resposta);
+        return instrucaoLatPromise('Escrita no arquivo', 1000);
+    })
+    .then(resposta => {
+        console.log(resposta);
+    })
+    .then(
+        () => console.log('Isso vai por último'))
+    .catch(
+        (erro) => console.log(erro.message)
+);
 
 const promisesArquivo = [
     // 'Inicializando',
