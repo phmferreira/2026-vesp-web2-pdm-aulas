@@ -7,10 +7,10 @@ function instrucaoLatencia(msg, tempoLatencia) {
     )
 }
 
-// instrucaoLatencia('Abrir arquivo', 1500);
-// instrucaoLatencia('Leitura do arquivo', 500);
-// instrucaoLatencia('Escrever no arquivo', 1000);
-// console.log('Isso executa primeiro!!!');
+instrucaoLatencia('Abrir arquivo', 1500);
+instrucaoLatencia('Leitura do arquivo', 500);
+instrucaoLatencia('Escrever no arquivo', 1000);
+console.log('Isso executa primeiro!!!');
 
 function executar(funcaoCallback) {
     funcaoCallback();
@@ -33,6 +33,7 @@ instrucaoLatCallback('Abrir arquivo', 1500,
         )
     )
 )
+
 
 function autenticar(callback) {
     console.log('Autenticando com o sistema');
